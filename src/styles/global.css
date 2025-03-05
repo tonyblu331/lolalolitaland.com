@@ -11,6 +11,20 @@
   --color-theme-green-light: #98D354;
 
   --font-special: 'Amertha', sans-serif;
+
+  /* animations */
+
+  --animate-marquee: slide-left 10s linear infinite;
+
+  @keyframes slide-left {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-100% - 1rem));
+    }
+  }
 }
 
 @font-face {
