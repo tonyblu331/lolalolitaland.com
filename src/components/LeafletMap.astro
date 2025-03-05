@@ -46,10 +46,19 @@ const {
           Number(this.dataset.longitude),
         ]
 
-        var map = window.L.map(this.dataset.container).setView(
+        var map = window.L.map(this.dataset.container, {
+          scrollWheelZoom: false, // Desactivar zoom con scroll
+          dragging: false // Desactivar arrastrar
+        }).setView(
           latlng,
           Number(this.dataset.zoom)
         )
+
+        // Activar interactividad al hacer clic
+        map.once("click", function () {
+          map.scrollWheelZoom.enable();
+          map.dragging.enable();
+        });
 
         window.L.tileLayer(this.dataset.tiles, {
           attribution: this.dataset.attribution,
