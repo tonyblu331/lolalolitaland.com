@@ -57,3 +57,7 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+.text-stroke {
+  -webkit-text-stroke: 0.1rem white;
+}
