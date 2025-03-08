@@ -1,5 +1,6 @@
 ---
 import "leaflet/dist/leaflet.css"
+import type { FeatureCollection, Geometry, GeoJsonProperties } from "geojson"
 
 export interface Props {
   latitude: number
@@ -9,7 +10,7 @@ export interface Props {
   tileLayer: string
   /** Atribución requerida por la mayoría de tile servers */
   attribution: string
-  geoJSON?: { data: any; color: string }[]
+  geoJSON?: { data: FeatureCollection<Geometry, GeoJsonProperties>; color: string }[]
 }
 
 const { latitude, longitude, zoom, tileLayer, attribution, geoJSON } = Astro.props
@@ -28,6 +29,7 @@ const { latitude, longitude, zoom, tileLayer, attribution, geoJSON } = Astro.pro
 
 <script>
   import L, { type LatLngTuple } from "leaflet"
+  import type { FeatureCollection, Geometry, GeoJsonProperties } from "geojson"
 
   class LeafletMap extends HTMLElement {
     connectedCallback() {
@@ -61,11 +63,19 @@ const { latitude, longitude, zoom, tileLayer, attribution, geoJSON } = Astro.pro
       if (!geojson) return
 
       const geoJSONData = JSON.parse(geojson as string)
-      geoJSONData.forEach(({ data, color }: { data: any; color: string }) => {
-        L.geoJSON(data, {
-          style: { color, weight: 5, opacity: 0.65 },
-        }).addTo(map)
-      })
+      geoJSONData.forEach(
+        ({
+          data,
+          color,
+        }: {
+          data: FeatureCollection<Geometry, GeoJsonProperties>
+          color: string
+        }) => {
+          L.geoJSON(data, {
+            style: { color, weight: 5, opacity: 0.65 },
+          }).addTo(map)
+        }
+      )
     }
   }
 

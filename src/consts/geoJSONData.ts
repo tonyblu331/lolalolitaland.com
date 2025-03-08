@@ -1,5 +1,7 @@
-export const lolalolitalandGeoJSON = {
-  type: "LolalolitalandCollection",
+import type { FeatureCollection, Geometry, GeoJsonProperties } from "geojson"
+
+export const lolalolitalandGeoJSON: FeatureCollection<Geometry, GeoJsonProperties> = {
+  type: "FeatureCollection",
   features: [
     {
       type: "Feature",
@@ -54,8 +56,12 @@ export const lolalolitalandGeoJSON = {
   ],
 }
 
-export const potaBlavaGeoJSON = {
-  type: "potaBlavaCollection",
+/**
+ * @type {GeoJSON.GeoJsonObject}
+ */
+export const potaBlavaGeoJSON: FeatureCollection<Geometry, GeoJsonProperties> = {
+  type: "FeatureCollection",
+
   features: [
     {
       type: "Feature",
