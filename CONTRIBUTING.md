@@ -4,7 +4,7 @@ Las contribuciones son lo que hacen que la comunidad de código abierto sea un l
 
 Si tienes alguna sugerencia que podría mejorar el proyecto, por favor haz un [_fork_](https://github.com/midudev/lolalolitaland.com/fork) del repositorio y crea una [_pull request_](https://github.com/midudev/lolalolitaland.com/pulls). También puedes simplemente abrir un [_issue_](https://github.com/midudev/lolalolitaland.com/issues) con la etiqueta "enhancement".
 
-quí tienes una guía rápida:
+Aquí tienes una guía rápida:
 
 1. Haz un [_fork_](https://github.com/midudev/lolalolitaland.com/fork) del Proyecto
 2. Clona tu fork (`git clone https://github.com/<USERNAME>/lolalolitaland.com`)
@@ -14,11 +14,11 @@ quí tienes una guía rápida:
 6. Haz Push a la Rama (`git push origin feature/CaracteristicaIncreible`)
 7. Abre una [_pull request_](https://github.com/midudev/lolalolitaland.com/pulls)
 
-Por favor, consulta nuestra [guía de contribución](https://github.com/midudev/lolalolitaland.com/blob/master/CONTRIBUTING.md) para saber cómo puedes empezar de la mejor manera y siguiendo [buenas prácticas](https://github.com/midudev/lolalolitaland.com/blob/main/CONTRIBUTING.md#buenas-prácticas-).
+Por favor, consulta nuestra [guía de contribución aquí](https://github.com/midudev/lolalolitaland.com/blob/master/CONTRIBUTING.md) para saber cómo puedes empezar de la mejor manera y siguiendo [buenas prácticas](https://github.com/midudev/lolalolitaland.com/blob/main/CONTRIBUTING.md#buenas-prácticas-).
 
 ### Contribuir desde Stackblitz
 
-Si quieres contribuir de una manera mas sencilla, puedes iniciar este proyecto desde _Stackblitz_ usando tu cuenta de GitHub:
+Si quieres contribuir de una manera más sencilla, puedes iniciar este proyecto desde _Stackblitz_ usando tu cuenta de GitHub:
 
 [![Abrir en Stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/midudev/lolalolitaland.com)
 
@@ -27,7 +27,7 @@ Si quieres contribuir de una manera mas sencilla, puedes iniciar este proyecto d
 > Nota: antes de codificar una nueva funcionalidad ve a la
 > sección de issues y PRs del repositorio y verifica que ya no se
 > esté discutiendo sobre ese tema, o que ya otra persona no lo
-> haya relizado.
+> haya realizado.
 
 ### 📋 Estándares de Código
 
@@ -67,7 +67,7 @@ Ejemplo: `feat: add newsletter subscription component`
 - Referencia los issues relacionados si los hay
 - Mantén los PR pequeños y enfocados en una sola característica
 
-### Formas de contribuir
+### For de contribuir
 
 - Todos los aportes son importantes
 - Codificación
@@ -89,7 +89,7 @@ Ejemplo: `feat: add newsletter subscription component`
 2. Atiende los comentarios del review
 3. Asegúrate de que el CI/CD pase
 
-## Estuctura del Proyecto
+## Estructura del Proyecto
 
 ```
 └── 📁lolalolitaland.com
