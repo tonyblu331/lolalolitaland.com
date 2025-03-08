@@ -1,6 +1,7 @@
 ---
 import LeafletMap from "@/components/LeafletMap.astro"
 import { lolalolitalandGeoJSON } from "@/consts/geoJSONData.js"
+import { potaBlavaGeoJSON } from "@/consts/geoJSONData.js"
 ---
 
 <section id="mapa" class="h-[61.8vh]">
@@ -10,6 +11,9 @@ import { lolalolitalandGeoJSON } from "@/consts/geoJSONData.js"
     zoom={15}
     tileLayer="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
     attribution="© OpenStreetMap © CARTO"
-    geoJSON={[{ data: lolalolitalandGeoJSON, color: "var(--color-primary)" }]}
+    geoJSON={[
+      { data: lolalolitalandGeoJSON, color: "var(--color-primary)" },
+      { data: potaBlavaGeoJSON, color: "green" },
+    ]}
   />
 </section>
