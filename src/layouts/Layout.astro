@@ -1,15 +1,16 @@
 ---
-import "@fontsource/poppins/400.css";
-import "@fontsource/poppins/500.css";
-import "@fontsource/poppins/600.css";
-import "@fontsource/poppins/700.css";
-import "@fontsource/poppins/800.css";
-import "@fontsource/poppins/900.css";
+import "@fontsource/poppins/400.css"
+import "@fontsource/poppins/500.css"
+import "@fontsource/poppins/600.css"
+import "@fontsource/poppins/700.css"
+import "@fontsource/poppins/800.css"
+import "@fontsource/poppins/900.css"
 
-import "../styles/global.css";
+import Header from "@/components/Header.astro"
 
-const { title = "Lola Lolita Land · 14 y 15 de Junio en Aquopolis, Madrid" } =
-  Astro.props;
+import "../styles/global.css"
+
+const { title = "Lola Lolita Land · 14 y 15 de Junio en Aquopolis, Madrid" } = Astro.props
 ---
 
 <!doctype html>
@@ -21,6 +22,7 @@ const { title = "Lola Lolita Land · 14 y 15 de Junio en Aquopolis, Madrid" } =
     <title>{title}</title>
   </head>
   <body class="w-screen overflow-x-hidden bg-white">
+    <Header />
     <slot />
   </body>
 </html>
