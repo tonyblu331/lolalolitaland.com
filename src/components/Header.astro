@@ -1,14 +1,14 @@
 <header>
   <nav
-    class="mx-auto flex max-w-6xl items-center justify-between py-6 pb-0 uppercase lg:px-8"
+    class="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 pb-0 uppercase lg:px-8"
     aria-label="Global"
   >
     <div class="flex flex-1">
       <div class="hidden lg:flex lg:gap-x-12">
         <a
-          href="/#galeria"
+          href="/#info"
           class="relative text-sm/6 font-semibold text-gray-900 after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-[#FF0695] after:transition-all after:duration-300 hover:text-[#FF0695] hover:after:w-full"
-          >Galería</a
+          >Info</a
         >
         <a
           href="/#faq"
@@ -25,7 +25,7 @@
         <button
           type="button"
           id="open-menu-button"
-          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          class="-m-2.5 inline-flex cursor-pointer items-center justify-center rounded-md p-2.5 text-gray-700"
         >
           <span class="sr-only">Abrir Menú Principal</span>
           <svg
@@ -64,7 +64,7 @@
       </div>
     </div>
   </nav>
-  <div class="hidden lg:hidden" id="mobile-menu" role="dialog" aria-modal="true">
+  <div class="relative z-50 hidden lg:hidden" id="mobile-menu" role="dialog" aria-modal="true">
     <div class="fixed inset-0 z-10"></div>
     <div class="fixed inset-y-0 left-0 z-10 w-full overflow-y-auto bg-white px-6 py-6">
       <div class="flex items-center justify-between">
@@ -88,36 +88,27 @@
             </svg>
           </button>
         </div>
-        <a href="https://lolalolitaland.com" class="-m-1.5 p-1.5">
-          <span class="sr-only">Lola Lolita Land</span>
-          <span>🌸</span>
-        </a>
-        <div class="flex flex-1 justify-end">
-          <div class="flex flex-col items-end">
-            <span class="relative cursor-not-allowed text-sm/6 font-semibold text-gray-400"
-              >Comprar Entradas <span aria-hidden="true">&rarr;</span></span
-            >
-            <span class="mt-1 w-full text-center text-xs text-[#FF0695] normal-case"
-              >Próximamente...</span
-            >
-          </div>
-        </div>
       </div>
       <div class="mt-6 space-y-2">
         <a
-          href="#"
+          href="/#info"
           class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
-          >Product</a
+          >Info</a
         >
         <a
-          href="#"
+          href="/#faq"
           class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
-          >Features</a
+          >Preguntas</a
         >
         <a
-          href="#"
+          href="/hoja-de-responsabilidad.pdf"
           class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
           >Aut. Menores</a
+        >
+        <a
+          href="/#tickets"
+          class="border-primary-light bg-primary-light/20 -mx-3 block rounded-lg border px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+          >Comprar Entradas</a
         >
       </div>
     </div>
