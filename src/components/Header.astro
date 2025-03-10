@@ -1,4 +1,4 @@
-<header class="bg-white">
+<header>
   <nav
     class="mx-auto flex max-w-6xl items-center justify-between py-6 pb-0 uppercase lg:px-8"
     aria-label="Global"
@@ -6,12 +6,12 @@
     <div class="flex flex-1">
       <div class="hidden lg:flex lg:gap-x-12">
         <a
-          href="#"
+          href="/#galeria"
           class="relative text-sm/6 font-semibold text-gray-900 after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-[#FF0695] after:transition-all after:duration-300 hover:text-[#FF0695] hover:after:w-full"
           >Galería</a
         >
         <a
-          href="#"
+          href="/#faq"
           class="relative text-sm/6 font-semibold text-gray-900 after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-[#FF0695] after:transition-all after:duration-300 hover:text-[#FF0695] hover:after:w-full"
           >Preguntas</a
         >
@@ -24,6 +24,7 @@
       <div class="flex lg:hidden">
         <button
           type="button"
+          id="open-menu-button"
           class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
         >
           <span class="sr-only">Abrir Menú Principal</span>
@@ -63,12 +64,16 @@
       </div>
     </div>
   </nav>
-  <div class="lg:hidden" role="dialog" aria-modal="true">
+  <div class="hidden lg:hidden" id="mobile-menu" role="dialog" aria-modal="true">
     <div class="fixed inset-0 z-10"></div>
     <div class="fixed inset-y-0 left-0 z-10 w-full overflow-y-auto bg-white px-6 py-6">
       <div class="flex items-center justify-between">
         <div class="flex flex-1">
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+          <button
+            type="button"
+            id="close-menu-button"
+            class="-m-2.5 rounded-md p-2.5 text-gray-700"
+          >
             <span class="sr-only">Cerrar Menú</span>
             <svg
               class="size-6"
@@ -118,3 +123,20 @@
     </div>
   </div>
 </header>
+
+<script>
+  // Get the menu elements
+  const mobileMenu = document.getElementById("mobile-menu")
+  const openMenuButton = document.getElementById("open-menu-button")
+  const closeMenuButton = document.getElementById("close-menu-button")
+
+  // Add event listener to open menu button
+  openMenuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.remove("hidden")
+  })
+
+  // Add event listener to close menu button
+  closeMenuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.add("hidden")
+  })
+</script>
