@@ -3,7 +3,6 @@ import "@fontsource/poppins/400.css"
 import "@fontsource/poppins/500.css"
 import "@fontsource/poppins/600.css"
 import "@fontsource/poppins/700.css"
-import "@fontsource/poppins/800.css"
 import "@fontsource/poppins/900.css"
 import Header from "@/components/Header.astro"
 
@@ -14,12 +13,14 @@ interface Props {
 }
 
 const { title = "Lola Lolita Land · 14 y 15 de Junio en Aquopolis, Madrid" } = Astro.props
+const preloadImg = "https://www.lolalolitaland.com/images/hero.webp"
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preload" as="image" href={preloadImg}>
     <title>{title}</title>
     <meta
       name="description"
