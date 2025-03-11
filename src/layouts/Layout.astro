@@ -1,10 +1,11 @@
 ---
-import "@fontsource/poppins/400.css";
-import "@fontsource/poppins/500.css";
-import "@fontsource/poppins/600.css";
-import "@fontsource/poppins/700.css";
-import "@fontsource/poppins/800.css";
-import "@fontsource/poppins/900.css";
+import "@fontsource/poppins/400.css"
+import "@fontsource/poppins/500.css"
+import "@fontsource/poppins/600.css"
+import "@fontsource/poppins/700.css"
+import "@fontsource/poppins/800.css"
+import "@fontsource/poppins/900.css"
+import Header from "@/components/Header.astro"
 
 import "@/styles/global.css";
 
@@ -25,7 +26,9 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class="w-screen overflow-x-hidden bg-primary-light scroll-smooth">
+
+  <body class="w-screen overflow-x-hidden scroll-smooth">
+    <Header />
     <slot />
   </body>
 </html>
