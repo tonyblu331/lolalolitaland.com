@@ -21,7 +21,7 @@ import Marquee from "@/components/Marquee.astro"
   <div class="container mx-auto px-4 py-12">
     <div class="mb-12 text-center">
       <p class="mx-auto max-w-2xl text-lg text-balance text-gray-600">
-        Elige el día y horario que mejor se adapte a ti para vivir la experiencia Lolalolitaland.
+        Elige el día que mejor se adapte a ti para vivir la experiencia Lolalolitaland.
       </p>
       <div class="bg-primary/10 mt-6 inline-block rounded-lg px-4 py-2">
         <p class="text-primary flex items-center font-medium">
@@ -42,7 +42,7 @@ import Marquee from "@/components/Marquee.astro"
     </div>
 
     <div class="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-      <!-- Día 1: 15 de junio - Mañana -->
+      <!-- Día 1: 15 de junio -->
       <div
         class="overflow-hidden rounded-xl border border-gray-100 bg-white opacity-75 shadow-md transition-all hover:shadow-lg"
       >
@@ -50,53 +50,34 @@ import Marquee from "@/components/Marquee.astro"
           <div class="flex items-start justify-between">
             <div>
               <p class="text-primary text-xs font-semibold tracking-wide uppercase">Día 1</p>
+              <p class="mt-1 text-gray-600">Sábado</p>
               <h3 class="mt-1 text-xl font-bold">15 de junio</h3>
-              <p class="mt-1 text-gray-600">Sesión de mañana</p>
-              <p class="mt-2 text-sm text-gray-500">10:00h - 14:00h</p>
             </div>
-            <span class="bg-primary/10 text-primary rounded-full px-2 py-1 text-xs font-medium"
-              >Mañana</span
-            >
           </div>
           <div class="mt-6">
             <button
               disabled
-              class="w-full cursor-not-allowed rounded-lg bg-gray-300 px-4 py-3 font-medium text-gray-600"
+              class="flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-lg bg-gray-300 px-4 py-3 font-medium text-gray-600"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="#4a5565"
+                viewBox="0 0 256 256"
+                class="-rotate-18"
+              >
+                <path
+                  d="M232,104a8,8,0,0,0,8-8V64a16,16,0,0,0-16-16H32A16,16,0,0,0,16,64V96a8,8,0,0,0,8,8,24,24,0,0,1,0,48,8,8,0,0,0-8,8v32a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V160a8,8,0,0,0-8-8,24,24,0,0,1,0-48ZM32,167.2a40,40,0,0,0,0-78.4V64H88V192H32Zm192,0V192H104V64H224V88.8a40,40,0,0,0,0,78.4Z"
+                ></path></svg
+              >
               Comprar entrada
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Día 1: 15 de junio - Tarde -->
-      <div
-        class="overflow-hidden rounded-xl border border-gray-100 bg-white opacity-75 shadow-md transition-all hover:shadow-lg"
-      >
-        <div class="p-6">
-          <div class="flex items-start justify-between">
-            <div>
-              <p class="text-primary text-xs font-semibold tracking-wide uppercase">Día 1</p>
-              <h3 class="mt-1 text-xl font-bold">15 de junio</h3>
-              <p class="mt-1 text-gray-600">Sesión de tarde</p>
-              <p class="mt-2 text-sm text-gray-500">16:00h - 20:00h</p>
-            </div>
-            <span class="bg-primary/10 text-primary rounded-full px-2 py-1 text-xs font-medium"
-              >Tarde</span
-            >
-          </div>
-          <div class="mt-6">
-            <button
-              disabled
-              class="w-full cursor-not-allowed rounded-lg bg-gray-300 px-4 py-3 font-medium text-gray-600"
-            >
-              Comprar entrada
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Día 2: 16 de junio - Mañana -->
+      <!-- Día 2: 16 de junio -->
       <div
         class="overflow-hidden rounded-xl border border-gray-100 bg-white opacity-75 shadow-md transition-all hover:shadow-lg"
       >
@@ -104,46 +85,27 @@ import Marquee from "@/components/Marquee.astro"
           <div class="flex items-start justify-between">
             <div>
               <p class="text-primary text-xs font-semibold tracking-wide uppercase">Día 2</p>
+              <p class="mt-1 text-gray-600">Domingo</p>
               <h3 class="mt-1 text-xl font-bold">16 de junio</h3>
-              <p class="mt-1 text-gray-600">Sesión de mañana</p>
-              <p class="mt-2 text-sm text-gray-500">10:00h - 14:00h</p>
             </div>
-            <span class="bg-primary/10 text-primary rounded-full px-2 py-1 text-xs font-medium"
-              >Mañana</span
-            >
           </div>
           <div class="mt-6">
             <button
               disabled
-              class="w-full cursor-not-allowed rounded-lg bg-gray-300 px-4 py-3 font-medium text-gray-600"
+              class="flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-lg bg-gray-300 px-4 py-3 font-medium text-gray-600"
             >
-              Comprar entrada
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Día 2: 16 de junio - Tarde -->
-      <div
-        class="overflow-hidden rounded-xl border border-gray-100 bg-white opacity-75 shadow-md transition-all hover:shadow-lg"
-      >
-        <div class="p-6">
-          <div class="flex items-start justify-between">
-            <div>
-              <p class="text-primary text-xs font-semibold tracking-wide uppercase">Día 2</p>
-              <h3 class="mt-1 text-xl font-bold">16 de junio</h3>
-              <p class="mt-1 text-gray-600">Sesión de tarde</p>
-              <p class="mt-2 text-sm text-gray-500">16:00h - 20:00h</p>
-            </div>
-            <span class="bg-primary/10 text-primary rounded-full px-2 py-1 text-xs font-medium"
-              >Tarde</span
-            >
-          </div>
-          <div class="mt-6">
-            <button
-              disabled
-              class="w-full cursor-not-allowed rounded-lg bg-gray-300 px-4 py-3 font-medium text-gray-600"
-            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="#4a5565"
+                viewBox="0 0 256 256"
+                class="-rotate-18"
+              >
+                <path
+                  d="M232,104a8,8,0,0,0,8-8V64a16,16,0,0,0-16-16H32A16,16,0,0,0,16,64V96a8,8,0,0,0,8,8,24,24,0,0,1,0,48,8,8,0,0,0-8,8v32a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V160a8,8,0,0,0-8-8,24,24,0,0,1,0-48ZM32,167.2a40,40,0,0,0,0-78.4V64H88V192H32Zm192,0V192H104V64H224V88.8a40,40,0,0,0,0,78.4Z"
+                ></path></svg
+              >
               Comprar entrada
             </button>
           </div>
