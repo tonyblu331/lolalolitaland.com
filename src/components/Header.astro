@@ -65,7 +65,7 @@
     </div>
   </nav>
   <div
-    class="fixed inset-0 z-50 h-full w-full -translate-x-full transform transition delay-300 lg:hidden"
+    class="fixed inset-0 z-50 h-full w-full -translate-x-full transform transition duration-300 lg:hidden"
     id="mobile-menu"
     role="dialog"
     aria-modal="true"
@@ -127,20 +127,15 @@
   const closeMenuButton = document.getElementById("close-menu-button")
   const mobileItems = mobileMenu?.querySelectorAll("a")
 
+  const toggleMenu = () => {
+    mobileMenu?.classList.toggle("-translate-x-full")
+  }
+
   // Add event listener to open menu button
-  openMenuButton?.addEventListener("click", () => {
-    // mobileMenu?.classList.remove("hidden")
-    mobileMenu?.classList.remove("-translate-x-full")
-  })
+  openMenuButton?.addEventListener("click", toggleMenu)
 
   // Add event listener to close menu button
-  closeMenuButton?.addEventListener("click", () => {
-    mobileMenu?.classList.add("-translate-x-full")
-  })
+  closeMenuButton?.addEventListener("click", toggleMenu)
 
-  mobileItems?.forEach((item) => {
-    item.addEventListener("click", () => {
-      mobileMenu?.classList.add("-translate-x-full")
-    })
-  })
+  mobileItems?.forEach((item) => item.addEventListener("click", toggleMenu))
 </script>
