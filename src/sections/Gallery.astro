@@ -5,65 +5,70 @@ import { galleryImages } from "@/consts/galleryImages"
 import { Image } from "astro:assets"
 ---
 
-<section class="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:px-8 lg:py-40" id="gallery">
-  <h2 class="mb-14 block p-4 text-center text-lg font-semibold text-white lg:text-3xl xl:text-4xl">
-    Galería evento 2024
-  </h2>
-  <ul
-    class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(even)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg] [&>*:nth-child(odd)]:hover:rotate-0"
-  >
-    {
-      galleryImages.map(({ image, alt }) => (
-        <li class="shadow-primary-light aspect-9/10 cursor-pointer rounded-md transition-transform duration-300 will-change-transform">
-          <Image
-            src={image}
-            alt={alt}
-            width={950}
-            height={900}
-            class="h-full w-full rounded-md border-2 border-dashed border-white object-cover"
-            transition:name="ligtbox-1"
-            loading="lazy"
-          />
-        </li>
-      ))
-    }
-  </ul>
-</section>
-<div
-  class="bg-primary-light/90 pointer-events-none fixed inset-0 z-[999999] flex h-full w-full items-center justify-center p-4 opacity-0 transition-opacity duration-300 ease-in-out"
-  role="dialog"
-  aria-modal="true"
-  id="lightbox"
->
-  <div class="relative w-full max-w-5xl p-4" id="light-box-content">
-    <button
-      type="button"
-      id="close-lightbox"
-      class="hover:text-primary absolute -top-8 -right-1 -m-2.5 cursor-pointer rounded-full bg-white p-2.5 text-gray-700 transition-all duration-300 ease-in will-change-transform hover:scale-125"
+<section class="bg-theme-blue px-6 py-16 lg:px-8">
+  <div class="mx-auto max-w-6xl" id="gallery">
+    <h2 class="mb-2 block p-4 text-center text-lg font-bold text-white lg:text-4xl xl:text-5xl">
+      ¡Así fue el año pasado!
+    </h2>
+    <h3 class="block pb-20 text-center text-lg font-bold text-white opacity-80">
+      Aquí tienes algunos recuerdos de la primera edición de LolaLolita Land
+    </h3>
+    <ul
+      class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(n)]:hover:scale-105 [&>*:nth-child(n)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg]"
     >
-      <span class="sr-only">Cerrar Galería</span>
-      <svg
-        class="size-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        aria-hidden="true"
-        data-slot="icon"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
-      </svg>
-    </button>
-    <Image
-      src={GalleryImg1}
-      alt="Gallery Image 1"
-      class="h-full w-full rounded-md"
-      width={2000}
-      height={1300}
-      transition:name="ligtbox-1"
-    />
+      {
+        galleryImages.map(({ image, alt }) => (
+          <li class="aspect-9/10 cursor-pointer rounded-md shadow-sm transition-transform duration-300 will-change-transform">
+            <Image
+              src={image}
+              alt={alt}
+              width={950}
+              height={900}
+              class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+              transition:name="ligtbox-1"
+              loading="lazy"
+            />
+          </li>
+        ))
+      }
+    </ul>
   </div>
-</div>
+  <div
+    class="bg-primary-light/90 pointer-events-none fixed inset-0 z-[999999] flex h-full w-full items-center justify-center p-4 opacity-0 transition-opacity duration-300 ease-in-out"
+    role="dialog"
+    aria-modal="true"
+    id="lightbox"
+  >
+    <div class="relative w-full max-w-5xl p-4" id="light-box-content">
+      <button
+        type="button"
+        id="close-lightbox"
+        class="hover:text-primary absolute -top-8 -right-1 -m-2.5 cursor-pointer rounded-full bg-white p-2.5 text-gray-700 transition-all duration-300 ease-in will-change-transform hover:scale-125"
+      >
+        <span class="sr-only">Cerrar Galería</span>
+        <svg
+          class="size-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          data-slot="icon"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <Image
+        src={GalleryImg1}
+        alt="Gallery Image 1"
+        class="h-full w-full rounded-md"
+        width={2000}
+        height={1300}
+        transition:name="ligtbox-1"
+      />
+    </div>
+  </div>
+</section>
 
 <script>
   const galleryItems = document.querySelectorAll("#gallery li img") as NodeListOf<HTMLImageElement>
