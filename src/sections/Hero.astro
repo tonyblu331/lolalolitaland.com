@@ -8,16 +8,18 @@ import CalendarImage from "@/assets/images/calendario.webp"
 
 <section class="relative pb-24">
   <DotBackground />
-  <div class="relative mx-auto mb-16 aspect-video h-screen object-cover">
+  <div class="bg-theme-blue-light relative mx-auto mb-16 aspect-video h-full w-full object-cover">
     <Logo
       title="Logo de Lola Lolita Land"
       class="animate-fade-in-down animate-delay-500 absolute top-0 right-0 left-0 z-50 mx-auto size-24 fill-white sm:size-32 md:size-44 lg:size-56"
     />
     <img
-      class="animate-fade-in relative z-10 h-full w-full object-cover [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]"
+      class="animate-fade-in relative z-10 h-full w-full object-cover"
       src="/images/hero.webp"
       alt="Fotografía de una joven recostada, que es Lola Lolita, sobre la arena con una cola de sirena azul, frente a una piscina con toboganes rosas en un entorno tropical, con el texto ‘Lola Lolita Land’ en la parte superior."
     />
+    <div class="absolute inset-0 z-20 bg-gradient-to-b from-transparent from-85% to-[#ff0695]">
+    </div>
   </div>
 
   <div class="mx-auto max-w-2xl lg:max-w-6xl">

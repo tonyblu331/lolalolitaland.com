@@ -1,0 +1,105 @@
+---
+import GalleryImg1 from "@/assets/images/gallery/gallery_01.webp"
+import { galleryImages } from "@/consts/galleryImages"
+
+import { Image } from "astro:assets"
+---
+
+<section class="bg-theme-blue px-6 py-16 lg:px-8">
+  <div class="mx-auto max-w-6xl" id="gallery">
+    <h2 class="mb-2 block p-4 text-center text-lg font-bold text-white lg:text-4xl xl:text-5xl">
+      ¡Así fue el año pasado!
+    </h2>
+    <h3 class="block pb-20 text-center text-lg font-bold text-white opacity-80">
+      Aquí tienes algunos recuerdos de la primera edición de LolaLolita Land
+    </h3>
+    <ul
+      class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(n)]:hover:scale-105 [&>*:nth-child(n)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg]"
+    >
+      {
+        galleryImages.map(({ image, alt }) => (
+          <li class="aspect-9/10 cursor-pointer rounded-md shadow-sm transition-transform duration-300 will-change-transform">
+            <Image
+              src={image}
+              alt={alt}
+              width={950}
+              height={900}
+              class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+              transition:name="ligtbox-1"
+              loading="lazy"
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div
+    class="bg-primary-light/90 pointer-events-none fixed inset-0 z-[999999] flex h-full w-full items-center justify-center p-4 opacity-0 transition-opacity duration-300 ease-in-out"
+    role="dialog"
+    aria-modal="true"
+    id="lightbox"
+  >
+    <div class="relative w-full max-w-5xl p-4" id="light-box-content">
+      <button
+        type="button"
+        id="close-lightbox"
+        class="hover:text-primary absolute -top-8 -right-1 -m-2.5 cursor-pointer rounded-full bg-white p-2.5 text-gray-700 transition-all duration-300 ease-in will-change-transform hover:scale-125"
+      >
+        <span class="sr-only">Cerrar Galería</span>
+        <svg
+          class="size-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          data-slot="icon"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <Image
+        src={GalleryImg1}
+        alt="Gallery Image 1"
+        class="h-full w-full rounded-md"
+        width={2000}
+        height={1300}
+        transition:name="ligtbox-1"
+      />
+    </div>
+  </div>
+</section>
+
+<script>
+  const galleryItems = document.querySelectorAll("#gallery li img") as NodeListOf<HTMLImageElement>
+  const lightBox = document.getElementById("lightbox") as HTMLDivElement
+  const lightBoxImg = lightBox?.querySelector("img") as HTMLImageElement
+  const btnCloseLightBox = document.getElementById("close-lightbox") as HTMLButtonElement
+
+  const openLightBox = () => {
+    lightBox.classList.remove("opacity-0", "pointer-events-none")
+    lightBox.classList.add("opacity-100", "pointer-events-auto")
+  }
+  const closeLightBox = () => {
+    lightBox.classList.add("opacity-0", "pointer-events-none")
+    lightBox.classList.remove("opacity-100", "pointer-events-auto")
+  }
+
+  galleryItems.forEach((eachItem) => {
+    eachItem.addEventListener("click", () => {
+      openLightBox()
+      lightBoxImg.src = eachItem.src
+    })
+  })
+
+  lightBox.addEventListener("click", (event) => {
+    closeLightBox()
+  })
+
+  lightBoxImg.addEventListener("click", (event) => {
+    event.stopPropagation()
+  })
+  btnCloseLightBox.addEventListener("click", (eent) => {
+    closeLightBox()
+  })
+</script>
