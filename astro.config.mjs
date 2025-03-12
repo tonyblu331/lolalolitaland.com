@@ -13,4 +13,7 @@ export default defineConfig({
       mode: "sprite",
     },
   },
+  build: {
+    inlineStylesheets: "always",
+  },
 })
