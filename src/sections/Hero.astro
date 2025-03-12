@@ -6,22 +6,16 @@ import DotBackground from "../components/DotBackground.astro"
 import CalendarImage from "@/assets/images/calendario.webp"
 ---
 
-<section id="info" class="relative mx-4 pt-12 pb-24">
+<section class="relative pb-24">
   <DotBackground />
-  <div class="relative mx-auto mb-16 aspect-video max-w-6xl">
+  <div class="relative mx-auto mb-16 aspect-video h-screen object-cover">
     <Logo
       title="Logo de Lola Lolita Land"
       class="animate-fade-in-down animate-delay-500 absolute top-0 right-0 left-0 z-50 mx-auto size-24 fill-white sm:size-32 md:size-44 lg:size-56"
     />
     <img
-      class="animate-fade-in relative z-10 rounded-[2rem]"
+      class="animate-fade-in relative z-10 h-full w-full object-cover [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]"
       src="/images/hero.webp"
-      alt="Fotografía de una joven recostada, que es Lola Lolita, sobre la arena con una cola de sirena azul, frente a una piscina con toboganes rosas en un entorno tropical, con el texto ‘Lola Lolita Land’ en la parte superior."
-    />
-    <img
-      aria-hidden="true"
-      class="absolute bottom-0 z-0 m-auto h-full w-auto scale-105 opacity-50 blur-xl"
-      src="/images/hero-blur.jpg"
       alt="Fotografía de una joven recostada, que es Lola Lolita, sobre la arena con una cola de sirena azul, frente a una piscina con toboganes rosas en un entorno tropical, con el texto ‘Lola Lolita Land’ en la parte superior."
     />
   </div>
@@ -42,7 +36,7 @@ import CalendarImage from "@/assets/images/calendario.webp"
       >
     </div>
     <div
-      class="view-animate-[--subjectReveal] animate-zoom-in animate-range-[entry_1%_contain_3%] grid grid-cols-1 gap-4 pt-10 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2"
+      class="view-animate-[--subjectReveal] animate-zoom-in animate-range-[entry_0%_cover_20%] grid grid-cols-1 gap-4 pt-10 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2"
       id="info"
     >
       <div class="relative lg:col-span-3">
