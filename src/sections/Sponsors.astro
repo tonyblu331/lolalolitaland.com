@@ -1,6 +1,8 @@
 ---
 import InfoJobs from "@/assets/infojobs.svg"
 import Cerave from "@/assets/cerave.svg"
+
+import { Image } from "astro:assets"
 ---
 
 <section class="py-24 sm:py-32">
@@ -8,8 +10,19 @@ import Cerave from "@/assets/cerave.svg"
     <h2 class="text-center text-lg/8 font-semibold text-gray-900">
       ¡Con el apoyo de empresas increíbles! 🚀
     </h2>
+
+    <!-- Categoría oficial -->
+    <div class="mt-16 flex items-center justify-center gap-1">
+      <div class="flex w-full items-center">
+        <div class="border-primary-light flex-grow border-t"></div>
+        <div class="mx-4">
+          <span class="text-center font-semibold text-gray-700"> Patrocinadores Oficiales </span>
+        </div>
+        <div class="border-primary-light flex-grow border-t"></div>
+      </div>
+    </div>
     <div
-      class="text-primary mx-auto mt-10 flex max-w-lg flex-col items-center justify-center gap-4 md:flex-row"
+      class="text-primary mx-auto mt-10 flex max-w-lg flex-col items-center justify-center gap-10 md:flex-row"
     >
       <a
         href="https://www.infojobs.net/"
@@ -33,6 +46,65 @@ import Cerave from "@/assets/cerave.svg"
         <Cerave
           title="Cerave"
           width="158"
+          height="48"
+          class="inline-block transition-transform group-hover:scale-110"
+        />
+      </a>
+      <a
+        href="https://www.dkny.com/?srsltid=AfmBOoqVKqaSRmOPiTAZbK0hT30uT3KlKRZB2Z4LW2nRgMqAOH0FvrJu"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group col-span-2 flex max-h-12 w-full items-center justify-center bg-white object-contain lg:col-span-1"
+      >
+        <Image
+          src="/src/assets/dkny.png"
+          alt="DKNY"
+          title="DKNY"
+          width="158"
+          height="48"
+          class="mt-2 inline-block transition-transform group-hover:scale-110"
+        />
+      </a>
+    </div>
+    <!-- Categoría colaboradores -->
+    <div class="mt-16 flex items-center justify-center gap-1">
+      <div class="flex w-full items-center">
+        <div class="border-primary-light flex-grow border-t"></div>
+        <div class="mx-4">
+          <span class="text-center font-semibold text-gray-700"> Colaboradores </span>
+        </div>
+        <div class="border-primary-light flex-grow border-t"></div>
+      </div>
+    </div>
+    <div
+      class="text-primary mx-auto mt-10 flex max-w-lg flex-col items-center justify-center gap-6 md:flex-row"
+    >
+      <a
+        href="https://www.donettes.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group col-span-2 flex max-h-12 w-full items-center justify-center bg-white object-contain lg:col-span-1"
+      >
+        <Image
+          src="/src/assets/donettes.png"
+          title="Donnetes"
+          alt="Donnetes"
+          width="140"
+          height="48"
+          class="inline-block transition-transform group-hover:scale-110"
+        />
+      </a>
+      <a
+        href="https://trolli.es/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group col-span-2 flex max-h-12 w-full items-center justify-center bg-white object-contain lg:col-span-1"
+      >
+        <Image
+          src="/src/assets/trolli.png"
+          title="Trolli"
+          alt="Trolli"
+          width="120"
           height="48"
           class="inline-block transition-transform group-hover:scale-110"
         />
