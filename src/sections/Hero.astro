@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets"
+import Logo from "../../public/favicon.svg"
 
 import DotBackground from "../components/DotBackground.astro"
 import CalendarImage from "@/assets/images/calendario.webp"
@@ -8,10 +9,9 @@ import CalendarImage from "@/assets/images/calendario.webp"
 <section id="info" class="relative mx-4 pt-12 pb-24">
   <DotBackground />
   <div class="relative mx-auto mb-16 aspect-video max-w-6xl">
-    <img
-      class="animate-fade-in-down animate-delay-500 absolute top-0 right-0 left-0 z-50 mx-auto w-20 sm:w-32 md:w-56"
-      src="/favicon.svg"
-      alt="Logo de Lola Lolita Land"
+    <Logo
+      title="Logo de Lola Lolita Land"
+      class="animate-fade-in-down animate-delay-500 absolute top-0 right-0 left-0 z-50 mx-auto size-24 fill-white sm:size-32 md:size-44 lg:size-56"
     />
     <img
       class="animate-fade-in relative z-10 rounded-[2rem]"
@@ -37,7 +37,7 @@ import CalendarImage from "@/assets/images/calendario.webp"
           alt="Lola Lolita"
         />
       </div>
-      <span class="text-primary inline-block py-4 text-left md:py-6 lg:py-8"
+      <span class="inline-block py-4 text-left text-white md:py-6 lg:py-8"
         >¿Estáis preparados para<br />pasar dos días inolvidables?</span
       >
     </div>
