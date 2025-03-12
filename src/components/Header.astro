@@ -1,4 +1,4 @@
-<header class="sticky top-0 z-60 animate-blur-header">
+<header class="animate-blur-header sticky top-0 z-60">
   <nav
     class="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 pb-0 uppercase lg:px-8"
     aria-label="Global"
@@ -7,17 +7,17 @@
       <div class="hidden lg:flex lg:gap-x-12">
         <a
           href="/#info"
-          class="relative text-sm/6 font-semibold text-gray-900 after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-[#FF0695] after:transition-all after:duration-300 hover:text-[#FF0695] hover:after:w-full"
+          class="relative text-sm/6 font-semibold text-white after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-[#61E2E5] after:transition-all after:duration-300 hover:text-[#61E2E5] hover:after:w-full"
           >Info</a
         >
         <a
           href="/#faq"
-          class="relative text-sm/6 font-semibold text-gray-900 after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-[#FF0695] after:transition-all after:duration-300 hover:text-[#FF0695] hover:after:w-full"
+          class="relative text-sm/6 font-semibold text-white after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-[#61E2E5] after:transition-all after:duration-300 hover:text-[#61E2E5] hover:after:w-full"
           >Preguntas</a
         >
         <a
           href="/hoja-de-responsabilidad.pdf"
-          class="relative text-sm/6 font-semibold text-gray-900 after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-[#FF0695] after:transition-all after:duration-300 hover:text-[#FF0695] hover:after:w-full"
+          class="relative text-sm/6 font-semibold text-white after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-[#61E2E5] after:transition-all after:duration-300 hover:text-[#61E2E5] hover:after:w-full"
           >Aut. Menores</a
         >
       </div>
@@ -54,18 +54,18 @@
     </a>
     <div class="flex flex-1 justify-end">
       <div class="relative flex flex-col items-end">
-        <span class="relative cursor-not-allowed text-sm/6 font-semibold text-gray-400"
+        <span class="relative cursor-not-allowed text-sm/6 font-semibold text-white opacity-70"
           >Comprar Entradas <span aria-hidden="true">&rarr;</span></span
         >
         <span
-          class="absolute -bottom-4 mt-1 w-full text-center text-[10px] text-[#FF0695] normal-case"
+          class="text-primary-light absolute -bottom-4 mt-1 w-full text-center text-[10px] normal-case"
           >Próximamente...</span
         >
       </div>
     </div>
   </nav>
   <dialog
-    class="z-50 max-h-full max-w-full size-full lg:hidden starting:-translate-x-full transition-(display) translate-x-0 duration-300 transition-discrete [&:not([open])]:-translate-x-full"
+    class="transition-(display) z-50 size-full max-h-full max-w-full translate-x-0 transition-discrete duration-300 lg:hidden starting:-translate-x-full [&:not([open])]:-translate-x-full"
     id="mobile-menu"
     role="dialog"
     aria-modal="true"
@@ -96,22 +96,22 @@
       <div class="mt-6 space-y-2">
         <a
           href="/#info"
-          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
           >Info</a
         >
         <a
           href="/#faq"
-          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
           >Preguntas</a
         >
         <a
           href="/hoja-de-responsabilidad.pdf"
-          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
           >Aut. Menores</a
         >
         <a
           href="/#tickets"
-          class="border-primary-light bg-primary-light/20 -mx-3 block rounded-lg border px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+          class="border-primary-light bg-primary-light/20 -mx-3 block rounded-lg border px-3 py-2 text-base/7 font-semibold text-white hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
           >Comprar Entradas</a
         >
       </div>
@@ -127,9 +127,7 @@
   const mobileItems = mobileMenu?.querySelectorAll("a")
 
   const toggleMenu = () => {
-    mobileMenu.open
-      ? mobileMenu.close()
-      : mobileMenu.showModal()
+    mobileMenu.open ? mobileMenu.close() : mobileMenu.showModal()
   }
 
   // Add event listener to open menu button
@@ -143,7 +141,7 @@
 
 <style>
   header {
-    animation: blur-header .3s linear both;
+    animation: blur-header 0.3s linear both;
     animation-timeline: scroll();
     animation-range: 0 150px;
   }
@@ -157,7 +155,7 @@
     100% {
       backdrop-filter: blur(10px);
       background-color: rgba(255, 255, 255, 0.8);
-      padding-bottom: calc(var(--spacing)* 6);/* pb-6 */
+      padding-bottom: calc(var(--spacing) * 6); /* pb-6 */
     }
   }
 </style>
