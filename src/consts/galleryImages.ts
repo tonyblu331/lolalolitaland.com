@@ -34,7 +34,6 @@ import GalleryImg34 from "@/assets/images/gallery/gallery_34.webp"
 import GalleryImg35 from "@/assets/images/gallery/gallery_35.webp"
 import GalleryImg36 from "@/assets/images/gallery/gallery_36.webp"
 import GalleryImg37 from "@/assets/images/gallery/gallery_37.webp"
-import GalleryImg38 from "@/assets/images/gallery/gallery_38.webp"
 
 export const galleryImages = [
   { image: GalleryImg1, alt: "Lola Lolita en un escenario con Carlos Baute." },
@@ -85,5 +84,4 @@ export const galleryImages = [
   },
   { image: GalleryImg36, alt: "El público mirando la coreografía de Lola Lolita junto a su grupo" },
   { image: GalleryImg37, alt: "Gallery Image 37" },
-  { image: GalleryImg38, alt: "Lola Lolita tomandose una foto con un grupo de bailarines." },
 ]
