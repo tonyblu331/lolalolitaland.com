@@ -1,5 +1,8 @@
 ---
 import Marquee from "@/components/Marquee.astro"
+
+import Ticket from "public/icons/ticket.svg"
+import Clock from "public/icons/clock.svg"
 ---
 
 <section class="relative w-full overflow-hidden" id="tickets">
@@ -23,28 +26,18 @@ import Marquee from "@/components/Marquee.astro"
       <p class="mx-auto max-w-2xl text-lg text-balance text-white">
         Elige el día que mejor se adapte a ti para vivir la experiencia Lolalolitaland.
       </p>
-      <div class="bg-primary/10 mt-6 inline-block rounded-lg px-4 py-2">
-        <p class="text-primary flex items-center font-medium">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="mr-2 h-5 w-5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-              clip-rule="evenodd"></path>
-          </svg>
+      <div class="bg-primary-light mt-6 inline-block rounded-lg px-4 py-2">
+        <p class="text-white flex items-center font-medium">
+          <Clock class="h-5 w-5 fill-white" />
           Próximamente disponibles
         </p>
       </div>
     </div>
 
-    <div class="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+    <div class="mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-2">
       <!-- Día 1: 15 de junio -->
       <div
-        class="overflow-hidden rounded-xl border border-gray-100 bg-white opacity-75 shadow-md transition-all hover:shadow-lg"
+        class="overflow-hidden rounded-[calc(var(--radius-lg)+1px)] rounded-t-[calc(2rem+1px)] border border-gray-100 bg-white opacity-75 shadow-md transition-all hover:shadow-lg md:rounded-t-[calc(var(--radius-lg)+1px)] md:rounded-tl-[calc(2rem+1px)] md:rounded-bl-[calc(2rem+1px)]"
       >
         <div class="p-6">
           <div class="flex items-start justify-between">
@@ -59,18 +52,7 @@ import Marquee from "@/components/Marquee.astro"
               disabled
               class="flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-lg bg-gray-300 px-4 py-3 font-medium text-gray-600"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="#4a5565"
-                viewBox="0 0 256 256"
-                class="-rotate-18"
-              >
-                <path
-                  d="M232,104a8,8,0,0,0,8-8V64a16,16,0,0,0-16-16H32A16,16,0,0,0,16,64V96a8,8,0,0,0,8,8,24,24,0,0,1,0,48,8,8,0,0,0-8,8v32a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V160a8,8,0,0,0-8-8,24,24,0,0,1,0-48ZM32,167.2a40,40,0,0,0,0-78.4V64H88V192H32Zm192,0V192H104V64H224V88.8a40,40,0,0,0,0,78.4Z"
-                ></path></svg
-              >
+              <Ticket title="ticket" class="h-5 w-5 -rotate-18 fill-gray-700" />
               Comprar entrada
             </button>
           </div>
@@ -79,7 +61,7 @@ import Marquee from "@/components/Marquee.astro"
 
       <!-- Día 2: 16 de junio -->
       <div
-        class="overflow-hidden rounded-xl border border-gray-100 bg-white opacity-75 shadow-md transition-all hover:shadow-lg"
+        class="overflow-hidden rounded-[calc(var(--radius-lg)+1px)] rounded-b-[calc(2rem+1px)] border border-gray-100 bg-white opacity-75 shadow-md transition-all hover:shadow-lg md:rounded-tr-[calc(2rem+1px)] md:rounded-b-[calc(var(--radius-lg)+1px)] md:rounded-br-[calc(2rem+1px)]"
       >
         <div class="p-6">
           <div class="flex items-start justify-between">
@@ -94,18 +76,7 @@ import Marquee from "@/components/Marquee.astro"
               disabled
               class="flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-lg bg-gray-300 px-4 py-3 font-medium text-gray-600"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="#4a5565"
-                viewBox="0 0 256 256"
-                class="-rotate-18"
-              >
-                <path
-                  d="M232,104a8,8,0,0,0,8-8V64a16,16,0,0,0-16-16H32A16,16,0,0,0,16,64V96a8,8,0,0,0,8,8,24,24,0,0,1,0,48,8,8,0,0,0-8,8v32a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V160a8,8,0,0,0-8-8,24,24,0,0,1,0-48ZM32,167.2a40,40,0,0,0,0-78.4V64H88V192H32Zm192,0V192H104V64H224V88.8a40,40,0,0,0,0,78.4Z"
-                ></path></svg
-              >
+              <Ticket title="ticket" class="h-5 w-5 -rotate-18 fill-gray-700" />
               Comprar entrada
             </button>
           </div>
@@ -114,7 +85,7 @@ import Marquee from "@/components/Marquee.astro"
     </div>
 
     <div class="mt-12 text-center">
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-white">
         Las entradas estarán disponibles próximamente. ¡Mantente atento!
       </p>
     </div>
