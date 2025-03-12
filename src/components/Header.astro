@@ -1,4 +1,4 @@
-<header class="animate-blur-header sticky top-0 z-60">
+<header class="animate-blur-header fixed top-0 z-60 w-screen">
   <nav
     class="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 pb-0 uppercase lg:px-8"
     aria-label="Global"
@@ -45,20 +45,14 @@
         </button>
       </div>
     </div>
-    <a
-      href="https://lolalolitaland.com"
-      class="-m-1.5 inline-block p-1.5 transition hover:scale-125"
-    >
-      <span class="sr-only">Lola Lolita Land</span>
-      <span class="text-4xl">🌸</span>
-    </a>
+
     <div class="flex flex-1 justify-end">
       <div class="relative flex flex-col items-end">
         <span class="relative cursor-not-allowed text-sm/6 font-semibold text-white opacity-70"
           >Comprar Entradas <span aria-hidden="true">&rarr;</span></span
         >
         <span
-          class="text-primary-light absolute -bottom-4 mt-1 w-full text-center text-[10px] normal-case"
+          class="text-primary-light absolute -bottom-3 w-full text-center text-[10px] normal-case"
           >Próximamente...</span
         >
       </div>
@@ -144,6 +138,7 @@
     animation: blur-header 0.3s linear both;
     animation-timeline: scroll();
     animation-range: 0 150px;
+    border-bottom: 1px solid transparent;
   }
 
   @keyframes blur-header {
@@ -154,8 +149,9 @@
 
     100% {
       backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: #ff0693a4;
       padding-bottom: calc(var(--spacing) * 6); /* pb-6 */
+      border-bottom-color: #b50066;
     }
   }
 </style>
