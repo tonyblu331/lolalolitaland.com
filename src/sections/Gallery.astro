@@ -78,7 +78,7 @@ const galleryImages = [
             alt="Gallery Image 1"
             width={950}
             height={900}
-            class="h-full w-full rounded-md object-cover"
+            class="border-primary h-full w-full rounded-md border-2 border-dotted object-cover"
             transition:name="ligtbox-1"
             loading="lazy"
           />
@@ -91,7 +91,7 @@ const galleryImages = [
   class="bg-primary-light/90 pointer-events-none fixed inset-0 z-[999999] flex h-full w-full items-center justify-center p-4 opacity-0 transition-opacity duration-300 ease-in-out"
   role="dialog"
   aria-modal="true"
-  id="ligth-box"
+  id="lightbox"
 >
   <div class="relative w-full max-w-5xl p-4" id="light-box-content">
     <button
@@ -125,7 +125,7 @@ const galleryImages = [
 
 <script>
   const galleryItems = document.querySelectorAll("#gallery li img") as NodeListOf<HTMLImageElement>
-  const lightBox = document.getElementById("ligth-box") as HTMLDivElement
+  const lightBox = document.getElementById("lightbox") as HTMLDivElement
   const lightBoxImg = lightBox?.querySelector("img") as HTMLImageElement
   const btnCloseLightBox = document.getElementById("close-lightbox") as HTMLButtonElement
 
@@ -152,7 +152,7 @@ const galleryImages = [
   lightBoxImg.addEventListener("click", (event) => {
     event.stopPropagation()
   })
-  btnCloseLightBox.addEventListener("click", (event) => {
+  btnCloseLightBox.addEventListener("click", (eent) => {
     closeLightBox()
   })
 </script>
