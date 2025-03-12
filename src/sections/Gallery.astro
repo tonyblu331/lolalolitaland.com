@@ -1,84 +1,26 @@
 ---
 import GalleryImg1 from "@/assets/images/gallery/gallery_01.webp"
-import GalleryImg2 from "@/assets/images/gallery/gallery_02.webp"
-import GalleryImg3 from "@/assets/images/gallery/gallery_03.webp"
-import GalleryImg9 from "@/assets/images/gallery/gallery_09.webp"
-import GalleryImg5 from "@/assets/images/gallery/gallery_05.webp"
-import GalleryImg6 from "@/assets/images/gallery/gallery_06.webp"
-import GalleryImg7 from "@/assets/images/gallery/gallery_07.webp"
-import GalleryImg8 from "@/assets/images/gallery/gallery_08.webp"
-import GalleryImg10 from "@/assets/images/gallery/gallery_10.webp"
-import GalleryImg11 from "@/assets/images/gallery/gallery_11.webp"
-import GalleryImg12 from "@/assets/images/gallery/gallery_12.webp"
-import GalleryImg13 from "@/assets/images/gallery/gallery_13.webp"
-import GalleryImg14 from "@/assets/images/gallery/gallery_14.webp"
-import GalleryImg15 from "@/assets/images/gallery/gallery_15.webp"
-import GalleryImg16 from "@/assets/images/gallery/gallery_16.webp"
-import GalleryImg17 from "@/assets/images/gallery/gallery_17.webp"
-import GalleryImg18 from "@/assets/images/gallery/gallery_18.webp"
-import GalleryImg19 from "@/assets/images/gallery/gallery_19.webp"
-import GalleryImg20 from "@/assets/images/gallery/gallery_20.webp"
-import GalleryImg21 from "@/assets/images/gallery/gallery_21.webp"
-import GalleryImg22 from "@/assets/images/gallery/gallery_22.webp"
-import GalleryImg23 from "@/assets/images/gallery/gallery_23.webp"
-import GalleryImg24 from "@/assets/images/gallery/gallery_24.webp"
-import GalleryImg25 from "@/assets/images/gallery/gallery_25.webp"
-import GalleryImg26 from "@/assets/images/gallery/gallery_26.webp"
-import GalleryImg27 from "@/assets/images/gallery/gallery_27.webp"
-import GalleryImg28 from "@/assets/images/gallery/gallery_28.webp"
-import GalleryImg29 from "@/assets/images/gallery/gallery_29.webp"
+import { galleryImages } from "@/consts/galleryImages"
 
 import { Image } from "astro:assets"
-const galleryImages = [
-  GalleryImg1,
-  GalleryImg2,
-  GalleryImg3,
-  GalleryImg9,
-  GalleryImg5,
-  GalleryImg6,
-  GalleryImg7,
-  GalleryImg8,
-  GalleryImg10,
-  GalleryImg11,
-  GalleryImg12,
-  GalleryImg13,
-  GalleryImg14,
-  GalleryImg15,
-  GalleryImg16,
-  GalleryImg17,
-  GalleryImg18,
-  GalleryImg19,
-  GalleryImg20,
-  GalleryImg21,
-  GalleryImg22,
-  GalleryImg23,
-  GalleryImg24,
-  GalleryImg25,
-  GalleryImg26,
-  GalleryImg27,
-  GalleryImg28,
-  GalleryImg29,
-]
 ---
 
 <section class="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:px-8 lg:py-40" id="gallery">
-  <h2
-    class="text-primary mb-14 block p-4 text-center text-lg font-semibold lg:text-3xl xl:text-4xl"
-  >
+  <h2 class="mb-14 block p-4 text-center text-lg font-semibold text-white lg:text-3xl xl:text-4xl">
     Galería evento 2024
   </h2>
   <ul
     class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(even)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg] [&>*:nth-child(odd)]:hover:rotate-0"
   >
     {
-      galleryImages.map((image) => (
+      galleryImages.map(({ image, alt }) => (
         <li class="shadow-primary-light aspect-9/10 cursor-pointer rounded-md transition-transform duration-300 will-change-transform">
           <Image
             src={image}
-            alt="Gallery Image 1"
+            alt={alt}
             width={950}
             height={900}
-            class="border-primary h-full w-full rounded-md border-2 border-dotted object-cover"
+            class="h-full w-full rounded-md border-2 border-dashed border-white object-cover"
             transition:name="ligtbox-1"
             loading="lazy"
           />
