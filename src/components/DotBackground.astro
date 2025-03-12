@@ -51,8 +51,8 @@
       this.dots = []
       this.mouse = { x: 0, y: 0 }
       this.radius = 100 // Radio de influencia del ratón reducido
-      this.pinkColor = "#FF0695"
-      this.grayColor = "#f8f8f8"
+      this.pinkColor = "#fff"
+      this.grayColor = "#fff"
       this.dotSize = 1.0 // Puntos ligeramente más pequeños
       this.dotSpacing = 30 // Puntos más juntos
       this.animationFrameId = null
@@ -162,7 +162,7 @@
           // Usar una función exponencial para que la intensidad caiga más rápidamente al alejarse del centro
           const intensity = Math.pow(1 - normalizedDistance, 2.5)
           dot.targetColor = this.pinkColor
-          
+
           // Los puntos más cercanos mantienen alta intensidad, los lejanos son más sutiles
           if (normalizedDistance < 0.3) {
             // Puntos centrales (30% del radio) mantienen alta intensidad
