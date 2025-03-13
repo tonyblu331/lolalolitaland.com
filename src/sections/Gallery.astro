@@ -104,4 +104,9 @@ import { Image } from "astro:assets"
   btnCloseLightBox.addEventListener("click", (event) => {
     closeLightBox()
   })
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeLightBox()
+    }
+  })
 </script>
