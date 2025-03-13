@@ -25,7 +25,7 @@ import { Image } from "astro:assets"
               width={950}
               height={900}
               class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
-              transition:name="ligtbox-1"
+              transition:name="lightbox-1"
               loading="lazy"
             />
           </li>
@@ -64,7 +64,7 @@ import { Image } from "astro:assets"
         class="h-full w-full rounded-md"
         width={2000}
         height={1300}
-        transition:name="ligtbox-1"
+        transition:name="lightbox-1"
       />
     </div>
   </div>
@@ -87,8 +87,10 @@ import { Image } from "astro:assets"
 
   galleryItems.forEach((eachItem) => {
     eachItem.addEventListener("click", () => {
+      if (lightBoxImg) {
+        lightBoxImg.src = eachItem.src
+      }
       openLightBox()
-      lightBoxImg.src = eachItem.src
     })
   })
 
@@ -99,7 +101,7 @@ import { Image } from "astro:assets"
   lightBoxImg.addEventListener("click", (event) => {
     event.stopPropagation()
   })
-  btnCloseLightBox.addEventListener("click", (eent) => {
+  btnCloseLightBox.addEventListener("click", (event) => {
     closeLightBox()
   })
 </script>
