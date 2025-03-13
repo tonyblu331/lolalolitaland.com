@@ -25,7 +25,7 @@
         <button
           type="button"
           id="open-menu-button"
-          class="hover:text-primary -m-2.5 inline-flex cursor-pointer items-center justify-center rounded-md p-2.5 text-gray-700 transition-all duration-300 will-change-transform hover:scale-125"
+          class="-m-2.5 inline-flex cursor-pointer items-center justify-center rounded-md p-2.5 text-white transition-all duration-300 will-change-transform hover:scale-125 hover:text-[#ffb7e0]"
         >
           <span class="sr-only">Abrir Menú Principal</span>
           <svg
@@ -64,13 +64,13 @@
     role="dialog"
     aria-modal="true"
   >
-    <div class="z-10 overflow-y-auto bg-white px-6 py-6">
+    <div class="bg-primary/85 z-10 h-full overflow-y-auto px-6 py-6">
       <div class="flex items-center justify-between">
         <div class="flex flex-1">
           <button
             type="button"
             id="close-menu-button"
-            class="hover:text-primary -m-2.5 cursor-pointer rounded-md p-2.5 text-gray-700 transition-all duration-300 ease-in will-change-transform hover:scale-125"
+            class="-m-2.5 cursor-pointer rounded-md p-2.5 text-white transition-all duration-300 ease-in will-change-transform hover:scale-125 hover:text-[#ffb7e0]"
           >
             <span class="sr-only">Cerrar Menú</span>
             <svg
@@ -90,22 +90,22 @@
       <div class="mt-6 space-y-2">
         <a
           href="/#info"
-          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[#FF0695]/10 hover:text-[#ffb7e0]"
           >Info</a
         >
         <a
           href="/#faq"
-          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[#FF0695]/10 hover:text-[#ffb7e0]"
           >Preguntas</a
         >
         <a
           href="/hoja-de-responsabilidad.pdf"
-          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+          class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[#FF0695]/10 hover:text-[#ffb7e0]"
           >Aut. Menores</a
         >
         <a
           href="/#tickets"
-          class="border-primary-light bg-primary-light/20 -mx-3 block rounded-lg border px-3 py-2 text-base/7 font-semibold text-white hover:bg-[#FF0695]/10 hover:text-[#FF0695]"
+          class="border-primary-light bg-primary-light/20 hover:bg-primary-light -mx-3 block rounded-lg border px-3 py-2 text-base/7 font-semibold text-white"
           >Comprar Entradas</a
         >
       </div>
@@ -115,7 +115,7 @@
 
 <script>
   // Get the menu elements
-  const mobileMenu = document.getElementById("mobile-menu")
+  const mobileMenu = document.getElementById("mobile-menu") as HTMLDialogElement
   const openMenuButton = document.getElementById("open-menu-button")
   const closeMenuButton = document.getElementById("close-menu-button")
   const mobileItems = mobileMenu?.querySelectorAll("a")
