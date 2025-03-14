@@ -82,6 +82,8 @@ import { Image } from "astro:assets"
       "pointer-events-auto",
       "backdrop-blur-[10px]"
     )
+
+    document.body.style.overflow = "hidden"
   }
   const closeLightBox = (image: HTMLImageElement) => {
     lightBox.classList.add("opacity-0", "pointer-events-none")
@@ -95,6 +97,9 @@ import { Image } from "astro:assets"
     const galleryParentID = image.getAttribute("data-thumbID")
     const galleryParent = document.getElementById(`${galleryParentID}`) as HTMLLIElement
     galleryParent.appendChild(image)
+
+    lightBoxImgContainer.innerHTML = "" // Elimina la imagen ampliada
+    document.body.style.overflow = "" // Restaurar scroll
   }
 
   galleryItems.forEach((eachItem) => {
@@ -141,5 +146,23 @@ import { Image } from "astro:assets"
 
     await animation.finished
     image.style.viewTransitionName = "none"
+  })
+
+  document.addEventListener("keydown", async (event) => {
+    if (event.key === "Escape") {
+      const image = lightBoxImgContainer.querySelector("img") as HTMLImageElement
+
+      if (!document.startViewTransition) {
+        closeLightBox(image)
+        return
+      }
+
+      const animation = document.startViewTransition(() => {
+        closeLightBox(image)
+      })
+
+      await animation.finished
+      image.style.viewTransitionName = "none"
+    }
   })
 </script>
