@@ -2,7 +2,10 @@
 import { galleryImages } from "@/consts/galleryImages"
 
 import { Image } from "astro:assets"
+import WaveSeparator from "@/components/WaveSeparator.astro"
 ---
+
+<WaveSeparator bottomColor="var(--color-theme-blue)" />
 
 <section class="bg-theme-blue px-6 py-16 lg:px-8">
   <div class="mx-auto max-w-6xl" id="gallery">
@@ -65,6 +68,8 @@ import { Image } from "astro:assets"
     </div>
   </div>
 </section>
+
+<WaveSeparator bottomColor="var(--color-primary)" />
 
 <script>
   const galleryItems = document.querySelectorAll("#gallery li img") as NodeListOf<HTMLImageElement>
