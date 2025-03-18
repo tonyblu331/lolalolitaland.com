@@ -10,7 +10,7 @@ import CalendarImage from "@/assets/images/calendario.webp"
   <div class="bg-theme-blue-light relative mx-auto mb-16 aspect-video h-full w-full object-cover">
     <div
       title="Logo de Lola Lolita Land"
-      class="absolute top-0 right-0 left-0 z-50 mx-auto flex justify-center"
+      class="absolute top-0 right-0 left-0 z-50 mx-auto flex justify-center lg:top-14"
     >
       <div
         class="logo lazy_background_image_maskImage lazy_background_image relative sm:size-32 md:size-44 lg:size-56"
@@ -61,7 +61,7 @@ import CalendarImage from "@/assets/images/calendario.webp"
       <span class="inline-block py-4 text-left text-white md:py-6 lg:py-8">
         ¿Estáis preparados para
         <br />
-        pasar 
+        pasar
         <span class="magic inline-block relative">
           <span class="magic-star">
             <svg viewBox="0 0 512 512">
@@ -241,7 +241,7 @@ import CalendarImage from "@/assets/images/calendario.webp"
   for(const star of (document.getElementsByClassName("magic-star") as HTMLCollectionOf<HTMLElement>)) {
     setTimeout(() => {
       animate(star);
-      
+
       setInterval(() => animate(star), 1000);
     }, index++ * (interval / 3))
   }
@@ -290,7 +290,7 @@ import CalendarImage from "@/assets/images/calendario.webp"
   }
 
   /* wave animation start */
-  
+
   .waves {
     height: 80px;
     width: 100%;
@@ -354,7 +354,7 @@ import CalendarImage from "@/assets/images/calendario.webp"
       transform: translate(85px, 0%);
     }
   }
-    
+
   @keyframes move-forever2 {
     0% {
       transform: translate(-90px, 0%);
@@ -404,13 +404,13 @@ import CalendarImage from "@/assets/images/calendario.webp"
       transform: translate(85px, 0%);
     }
   }
-    
+
   /* wave animation end */
 
   /* letter animation START  */
   .magic-star {
     --size: clamp(20px, 1.5vw, 30px);
-    
+
     animation: scale 700ms ease forwards;
     display: block;
     height: var(--size);
@@ -449,7 +449,7 @@ import CalendarImage from "@/assets/images/calendario.webp"
     from {
       background-position: 0% center;
     }
-    
+
     to {
       background-position: -200% center;
     }
@@ -459,7 +459,7 @@ import CalendarImage from "@/assets/images/calendario.webp"
     from, to {
       transform: scale(0);
     }
-    
+
     50% {
       transform: scale(1);
     }
@@ -469,7 +469,7 @@ import CalendarImage from "@/assets/images/calendario.webp"
     from {
       transform: rotate(0deg);
     }
-    
+
     to {
       transform: rotate(180deg);
     }
