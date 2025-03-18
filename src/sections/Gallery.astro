@@ -85,9 +85,18 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
   const openLightBox = (index: number) => {
     if (index < 0 || index >= galleryItems.length) return
     currentIndex = index
-    const image = galleryItems[index].cloneNode() as HTMLImageElement
-    image.style.viewTransitionName = ""
-    lightBoxImgContainer.innerHTML = ""
+    const image = galleryItems[index] as HTMLImageElement
+
+    const previousImage = lightBoxImgContainer.querySelector("img") as HTMLImageElement
+    if (previousImage) {
+      const galleryParentID = previousImage.getAttribute("data-thumbID")
+      const galleryParent = document.getElementById(`${galleryParentID}`) as HTMLLIElement
+      galleryParent.appendChild(previousImage)
+    }
+    // Evitamos el error de dupliacado de viewTransitionName
+    galleryItems.forEach((img) => (img.style.viewTransitionName = "none"))
+    image.style.viewTransitionName = "selected-img"
+
     lightBoxImgContainer.appendChild(image)
     lightBox.classList.remove("opacity-0", "pointer-events-none")
     lightBox.classList.add(
@@ -101,7 +110,7 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
     document.body.style.overflow = "hidden"
   }
 
-  const closeLightBox = () => {
+  const closeLightBox = (image: HTMLImageElement) => {
     lightBox.classList.add("opacity-0", "pointer-events-none")
     lightBox.classList.remove(
       "bg-[#ff0693a4]",
@@ -110,8 +119,10 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
       "pointer-events-auto",
       "backdrop-blur-[10px]"
     )
+    const galleryParentID = image.getAttribute("data-thumbID")
 
-    lightBoxImgContainer.innerHTML = "" // Elimina la imagen ampliada
+    const galleryParent = document.getElementById(`${galleryParentID}`) as HTMLLIElement
+    galleryParent.appendChild(image)
     document.body.style.overflow = "" // Restaurar scroll
   }
 
@@ -119,7 +130,14 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
     let newIndex = currentIndex + direction
     if (newIndex < 0 || newIndex >= galleryItems.length) return
 
-    openLightBox(newIndex)
+    if (!document.startViewTransition) {
+      openLightBox(newIndex)
+      return
+    }
+
+    document.startViewTransition(() => {
+      openLightBox(newIndex)
+    })
   }
 
   galleryItems.forEach((image, index) => {
@@ -142,18 +160,20 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
   })
 
   const handleClose = async () => {
-    if (!lightBoxImgContainer.querySelector("img")) return
+    const image = lightBoxImgContainer.querySelector("img") as HTMLImageElement
+    if (!image) return
 
     if (!document.startViewTransition) {
-      closeLightBox()
+      closeLightBox(image)
       return
     }
 
     const animation = document.startViewTransition(() => {
-      closeLightBox()
+      closeLightBox(image)
     })
 
     await animation.finished
+    image.style.viewTransitionName = "none"
   }
 
   lightBox.addEventListener("click", handleClose)
