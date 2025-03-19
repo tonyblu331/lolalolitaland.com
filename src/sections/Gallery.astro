@@ -185,9 +185,11 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
   document.addEventListener("keydown", async (event) => {
     if (event.key === "Escape") {
       await handleClose()
-    } else if (event.key === "ArrowRight") {
+    } else if (event.key === "ArrowRight" || event.key === "d") {
+      event.preventDefault()
       navigateLightBox(1)
-    } else if (event.key === "ArrowLeft") {
+    } else if (event.key === "ArrowLeft" || event.key === "a") {
+      event.preventDefault()
       navigateLightBox(-1)
     }
   })
