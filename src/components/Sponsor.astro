@@ -1,5 +1,5 @@
 ---
-const { href } = Astro.props
+const { href, isOfficial } = Astro.props
 ---
 
 <a
@@ -7,6 +7,7 @@ const { href } = Astro.props
   target="_blank"
   rel="noopener noreferrer"
   class="group flex max-h-12 w-64 grow-0 items-center justify-center rounded-[2rem] bg-white object-contain p-11 lg:col-span-1"
+  class:list={[isOfficial ? "border-primary" : "border-primary-light", "border-2", "border-t"]}
 >
   <slot />
 </a>

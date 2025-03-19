@@ -29,7 +29,7 @@ import Sponsor from "@/components/Sponsor.astro"
       </div>
     </div>
     <div class="mx-auto mt-10 flex flex-col items-center justify-center gap-10 md:flex-row">
-      <Sponsor href="https://www.infojobs.net/">
+      <Sponsor href="https://www.infojobs.net/" isOfficial>
         <InfoJobs
           title="InfoJobs"
           width="158"
@@ -37,7 +37,7 @@ import Sponsor from "@/components/Sponsor.astro"
           class="inline-block transition-transform group-hover:scale-110"
         />
       </Sponsor>
-      <Sponsor href="https://www.cerave.es/">
+      <Sponsor href="https://www.cerave.es/" isOfficial>
         <Cerave
           title="Cerave"
           width="158"
@@ -47,6 +47,7 @@ import Sponsor from "@/components/Sponsor.astro"
       </Sponsor>
       <Sponsor
         href="https://www.dkny.com/?srsltid=AfmBOoqVKqaSRmOPiTAZbK0hT30uT3KlKRZB2Z4LW2nRgMqAOH0FvrJu"
+        isOfficial
       >
         <Image
           src={Dkny}
