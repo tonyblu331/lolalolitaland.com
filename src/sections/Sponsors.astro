@@ -5,11 +5,12 @@ import Donnetes from "@/assets/donettes.png"
 import Trolli from "@/assets/trolli.png"
 import Dkny from "@/assets/dkny.png"
 
+import WaveSeparator from "@/components/WaveSeparator.astro"
 import { Image } from "astro:assets"
 ---
 
 <section
-  class="view-animate-[--subjectReveal] animate-zoom-in animate-range-[entry_15%_contain_25%] py-24 sm:py-32"
+  class="view-animate-[--subjectReveal] animate-zoom-in animate-range-[entry_15%_contain_25%] bg-theme-blue py-24 sm:py-32"
 >
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <h2 class="text-center text-lg/8 font-semibold text-white">
@@ -19,16 +20,14 @@ import { Image } from "astro:assets"
     <!-- Categoría oficial -->
     <div class="mt-16 flex items-center justify-center gap-1">
       <div class="flex w-full items-center">
-        <div class="border-primary-light border-2 flex-grow border-t"></div>
+        <div class="border-primary-light flex-grow border-2 border-t"></div>
         <div class="mx-4">
           <span class="text-center font-semibold text-white"> Patrocinadores Oficiales </span>
         </div>
-        <div class="border-primary-light border-2 flex-grow border-t"></div>
+        <div class="border-primary-light flex-grow border-2 border-t"></div>
       </div>
     </div>
-    <div
-      class="mx-auto mt-10 flex  flex-col items-center justify-center gap-10 md:flex-row"
-    >
+    <div class="mx-auto mt-10 flex flex-col items-center justify-center gap-10 md:flex-row">
       <a
         href="https://www.infojobs.net/"
         target="_blank"
@@ -67,23 +66,21 @@ import { Image } from "astro:assets"
           title="DKNY"
           width="158"
           height="48"
-          class="mt-2 w-24 inline-block transition-transform group-hover:scale-110"
+          class="mt-2 inline-block w-24 transition-transform group-hover:scale-110"
         />
       </a>
     </div>
     <!-- Categoría colaboradores -->
     <div class="mt-16 flex items-center justify-center gap-1">
       <div class="flex w-full items-center">
-        <div class="border-primary-light border-2 flex-grow border-t"></div>
+        <div class="border-primary-light flex-grow border-2 border-t"></div>
         <div class="mx-4">
           <span class="text-center font-semibold text-white"> Colaboradores </span>
         </div>
-        <div class="border-primary-light border-2 flex-grow border-t"></div>
+        <div class="border-primary-light flex-grow border-2 border-t"></div>
       </div>
     </div>
-    <div
-      class="mx-auto mt-10 flex  flex-col items-center justify-center gap-10 md:flex-row"
-    >
+    <div class="mx-auto mt-10 flex flex-col items-center justify-center gap-10 md:flex-row">
       <a
         href="https://www.donettes.com/"
         target="_blank"
@@ -117,3 +114,4 @@ import { Image } from "astro:assets"
     </div>
   </div>
 </section>
+<WaveSeparator bottomColor="var(--color-primary)" />
