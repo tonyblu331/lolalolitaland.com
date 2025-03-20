@@ -230,12 +230,14 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
   }
 
   document.addEventListener("keydown", async (event) => {
+    const isLightboxOpen = !lightBox.classList.contains("opacity-0")
+
     if (event.key === "Escape") {
       await handleClose()
-    } else if (event.key === "ArrowRight" || event.key === "d") {
+    } else if ((event.key === "ArrowRight" || event.key === "d") && isLightboxOpen) {
       event.preventDefault()
       navigateLightBox(1)
-    } else if (event.key === "ArrowLeft" || event.key === "a") {
+    } else if ((event.key === "ArrowLeft" || event.key === "a") && isLightboxOpen) {
       event.preventDefault()
       navigateLightBox(-1)
     }
