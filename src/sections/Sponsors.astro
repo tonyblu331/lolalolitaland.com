@@ -7,6 +7,7 @@ import Trolli from "@/assets/trolli.png"
 
 import WaveSeparator from "@/components/WaveSeparator.astro"
 import { Image } from "astro:assets"
+import Sponsor from "@/components/Sponsor.astro"
 ---
 
 <WaveSeparator bottomColor="var(--color-theme-blue)" />
@@ -30,37 +31,25 @@ import { Image } from "astro:assets"
       </div>
     </div>
     <div class="mx-auto mt-10 flex flex-col items-center justify-center gap-10 md:flex-row">
-      <a
-        href="https://www.infojobs.net/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group flex max-h-12 w-full items-center justify-center rounded-[2rem] bg-white object-contain p-10 lg:col-span-1"
-      >
+      <Sponsor href="https://www.infojobs.net/" isOfficial>
         <InfoJobs
           title="InfoJobs"
           width="158"
           height="48"
           class="inline-block transition-transform group-hover:scale-110"
         />
-      </a>
-      <a
-        href="https://www.cerave.es/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group flex max-h-12 w-full items-center justify-center rounded-[2rem] bg-white object-contain p-10 lg:col-span-1"
-      >
+      </Sponsor>
+      <Sponsor href="https://www.cerave.es/" isOfficial>
         <Cerave
           title="Cerave"
           width="158"
           height="48"
           class="inline-block transition-transform group-hover:scale-110"
         />
-      </a>
-      <a
+      </Sponsor>
+      <Sponsor
         href="https://www.dkny.com/?srsltid=AfmBOoqVKqaSRmOPiTAZbK0hT30uT3KlKRZB2Z4LW2nRgMqAOH0FvrJu"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group flex max-h-12 w-full items-center justify-center rounded-[2rem] bg-white object-contain p-10 lg:col-span-1"
+        isOfficial
       >
         <Image
           src={Dkny}
@@ -70,7 +59,7 @@ import { Image } from "astro:assets"
           height="48"
           class="mt-2 inline-block w-24 transition-transform group-hover:scale-110"
         />
-      </a>
+      </Sponsor>
     </div>
     <!-- Categoría colaboradores -->
     <div class="mt-16 flex items-center justify-center gap-1">
@@ -83,12 +72,7 @@ import { Image } from "astro:assets"
       </div>
     </div>
     <div class="mx-auto mt-10 flex flex-col items-center justify-center gap-10 md:flex-row">
-      <a
-        href="https://www.donettes.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group flex max-h-12 w-full items-center justify-center rounded-[2rem] bg-white object-contain p-10 lg:col-span-1"
-      >
+      <Sponsor href="https://www.donettes.com/">
         <Image
           src={Donnetes}
           title="Donnetes"
@@ -97,13 +81,8 @@ import { Image } from "astro:assets"
           height="48"
           class="inline-block transition-transform group-hover:scale-110"
         />
-      </a>
-      <a
-        href="https://trolli.es/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group flex max-h-12 w-full items-center justify-center rounded-[2rem] bg-white object-contain p-10 lg:col-span-1"
-      >
+      </Sponsor>
+      <Sponsor href="https://trolli.es/">
         <Image
           src={Trolli}
           title="Trolli"
@@ -112,7 +91,7 @@ import { Image } from "astro:assets"
           height="48"
           class="inline-block w-32 transition-transform group-hover:scale-110"
         />
-      </a>
+      </Sponsor>
     </div>
   </div>
 </section>
