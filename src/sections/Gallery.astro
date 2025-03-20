@@ -2,12 +2,14 @@
 import { galleryImages } from "@/consts/galleryImages"
 
 import { Image } from "astro:assets"
+import StarryBackground from "@/components/StarryBackground.astro"
 import WaveSeparator from "@/components/WaveSeparator.astro"
 ---
 
 <WaveSeparator bottomColor="var(--color-theme-blue)" />
 
-<section class="bg-theme-blue px-6 py-16 lg:px-8">
+<section class="bg-theme-blue relative px-6 py-16 lg:px-8">
+  <StarryBackground />
   <div class="mx-auto max-w-6xl" id="gallery">
     <div class="relative mb-12 flex items-center justify-center">
       <h2
