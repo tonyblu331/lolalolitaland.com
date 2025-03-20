@@ -142,6 +142,13 @@ import { Image } from "astro:assets"
     transition: 0.5s ease-in-out;
   }
 
+  body:has(.card[data-color="have"]:hover) h2,
+  body:has(.card[data-color="have"]:hover) dt,
+  body:has(.card[data-color="have"]:hover) dd,
+  body:has(.card[data-color="have"]:hover) a {
+    color: #393941;
+  }
+
   .card {
     background-size: cover;
     background-position: center;
