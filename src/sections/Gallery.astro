@@ -74,6 +74,20 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
         </svg>
       </button>
 
+      <button
+        id="prev-image"
+        class="hover:text-primary absolute top-1/2 -left-16 z-50 flex h-12 w-12 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded-full bg-white p-2.5 text-2xl text-gray-700 transition-all duration-300 ease-in-out hover:scale-125"
+      >
+        &#60;
+      </button>
+
+      <button
+        id="next-image"
+        class="hover:text-primary absolute top-1/2 -right-16 z-50 flex h-12 w-12 -translate-y-1/2 transform cursor-pointer items-center justify-center rounded-full bg-white p-2.5 text-2xl text-gray-700 transition-all duration-300 ease-in-out hover:scale-125"
+      >
+        &#62;
+      </button>
+
       <figure id="light-box-content"></figure>
     </div>
   </div>
@@ -88,6 +102,8 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
   const lightBox = document.getElementById("lightbox") as HTMLDivElement
   const lightBoxImgContainer = document.getElementById("light-box-content") as HTMLDivElement
   const btnCloseLightBox = document.getElementById("close-lightbox") as HTMLButtonElement
+  const btnPrev = document.getElementById("prev-image") as HTMLButtonElement
+  const btnNext = document.getElementById("next-image") as HTMLButtonElement
 
   let currentIndex = 0
 
@@ -117,6 +133,7 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
     )
 
     document.body.style.overflow = "hidden"
+    updateNavigationButtons()
   }
 
   const closeLightBox = (image: HTMLImageElement) => {
@@ -147,6 +164,13 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
     document.startViewTransition(() => {
       openLightBox(newIndex)
     })
+  }
+
+  const updateNavigationButtons = () => {
+    if (btnPrev && btnNext) {
+      btnPrev.style.display = currentIndex > 0 ? "flex" : "none"
+      btnNext.style.display = currentIndex < galleryItems.length - 1 ? "flex" : "none"
+    }
   }
 
   galleryItems.forEach((image, index) => {
@@ -190,6 +214,18 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
     event.stopPropagation()
     handleClose()
   })
+
+  if (btnPrev && btnNext) {
+    btnPrev.addEventListener("click", (event) => {
+      event.stopPropagation()
+      navigateLightBox(-1)
+    })
+
+    btnNext.addEventListener("click", (event) => {
+      event.stopPropagation()
+      navigateLightBox(1)
+    })
+  }
 
   document.addEventListener("keydown", async (event) => {
     if (event.key === "Escape") {
