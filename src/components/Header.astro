@@ -130,6 +130,15 @@
   // Add event listener to close menu button
   closeMenuButton?.addEventListener("click", toggleMenu)
 
+  document.addEventListener("click", (event) => {
+    const isClickInsideMenu = mobileMenu.contains(event.target as Node)
+    const isClickInsideButton = openMenuButton?.contains(event.target as Node)
+
+    if (isClickInsideMenu && !isClickInsideButton) {
+      mobileMenu.close()
+    }
+  })
+
   mobileItems?.forEach((item) => item.addEventListener("click", toggleMenu))
 </script>
 
