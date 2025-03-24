@@ -3,7 +3,7 @@ import { Image } from "astro:assets"
 import CalendarImage from "@/assets/images/calendario.webp"
 ---
 
-<div class="mx-auto max-w-2xl p-4 pb-32 lg:max-w-6xl">
+<div class="mx-auto mt-24 max-w-2xl p-4 pb-32 lg:max-w-6xl">
   <div
     class="mx-auto flex flex-row items-center justify-center gap-x-4 text-lg font-semibold tracking-tight text-balance text-gray-950 md:gap-x-8 md:text-2xl lg:text-3xl xl:text-4xl"
   >
@@ -45,12 +45,12 @@ import CalendarImage from "@/assets/images/calendario.webp"
     </span>
   </div>
   <div
-    class="view-animate-[--subjectReveal] animate-zoom-in animate-range-[entry_0%_cover_20%] grid grid-cols-1 gap-4 pt-10 sm:mt-16 lg:grid-cols-6"
+    class="view-animate-[--subjectReveal] animate-zoom-in animate-range-[entry_0%_cover_20%] grid grid-cols-1 gap-4 pt-10 sm:mt-4 lg:grid-cols-6"
     id="info"
   >
     <div class="relative lg:col-span-3">
       <div
-        class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] bg-white max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]"
+        class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] bg-white max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)] lg:rounded-bl-[calc(2rem+1px)]"
       >
         <div class="relative h-80 w-full overflow-hidden">
           <Image
@@ -77,13 +77,13 @@ import CalendarImage from "@/assets/images/calendario.webp"
         </div>
       </div>
       <div
-        class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]"
+        class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem] lg:rounded-bl-[2rem]"
       >
       </div>
     </div>
     <div class="relative lg:col-span-3">
       <div
-        class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] bg-white lg:rounded-tr-[calc(2rem+1px)]"
+        class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] bg-white lg:rounded-tr-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]"
       >
         <div class="relative h-80 w-full overflow-hidden">
           <img
@@ -104,7 +104,7 @@ import CalendarImage from "@/assets/images/calendario.webp"
         </div>
       </div>
       <div
-        class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 lg:rounded-tr-[2rem]"
+        class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 lg:rounded-tr-[2rem] lg:rounded-br-[2rem]"
       >
       </div>
     </div>
