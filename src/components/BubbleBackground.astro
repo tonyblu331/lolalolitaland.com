@@ -1,0 +1,79 @@
+---
+const bubbles = Array.from({ length: 60 }, (_, i) => ({
+  id: i + 1,
+  size: `${Math.random() * 30 + 10}px`,
+  left: `${Math.random() * 90}%`,
+  delay: `${Math.random() * 10 - 5}s`,
+  duration: `${Math.random() * 15 + 10}s`,
+  opacity: `${Math.random() * 0.4 + 0.3}`,
+}));
+
+const instanceId = Math.random().toString(36).substring(2, 9);
+---
+
+<style lang="postcss">
+  .bubble {
+    @apply absolute rounded-full;
+    bottom: 0;
+    background-color: white;
+    will-change: transform;
+    animation: bubble linear infinite;
+  }
+
+  @keyframes sideways {
+    0% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: 100px;
+    }
+  }
+</style>
+
+<div class="pointer-events-none absolute inset-0 overflow-hidden h-full ocean" data-id={instanceId}>
+  {bubbles.map((bubble) => (
+    <div
+      class="bubble"
+      style={`
+        width: ${bubble.size};
+        height: ${bubble.size};
+        left: ${bubble.left};
+        animation-duration: ${bubble.duration};
+        animation-delay: ${bubble.delay};
+        opacity: ${bubble.opacity};
+      `}
+    ></div>
+  ))}
+</div>
+
+<script lang="ts">
+  if (typeof document !== "undefined") {
+    document.addEventListener("DOMContentLoaded", () => {
+      const oceanContainers = document.querySelectorAll('.ocean');
+      oceanContainers.forEach((ocean) => {
+        if (ocean instanceof HTMLElement) {
+          const instanceId = ocean.getAttribute('data-id');
+          const oceanHeight = ocean.offsetHeight;
+          const style = document.createElement('style');
+          document.head.appendChild(style);
+
+          style.innerHTML = `
+            .ocean[data-id="${instanceId}"] .bubble {
+              animation-name: bubble-${instanceId};
+            }
+
+            @keyframes bubble-${instanceId} {
+              0% {
+                transform: translateY(-10px);
+              }
+              100% {
+                transform: translateY(-${oceanHeight}px); /* Move up by the full height of the container */
+                opacity: 0;
+              }
+            }
+          `;
+        }
+      });
+    });
+  }
+</script>
