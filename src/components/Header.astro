@@ -3,7 +3,7 @@
     class="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 pb-0 uppercase lg:px-8"
     aria-label="Global"
   >
-    <div class="flex flex-1">
+    <div class="flex">
       <div class="hidden lg:flex lg:gap-x-12">
         <a
           href="/#info"
@@ -201,7 +201,7 @@
     transition: opacity 0.3s ease-in-out;
     z-index: 100;
   }
-  
+
 
 
   .tickets-button {
@@ -210,7 +210,7 @@
     position: relative;
     overflow: hidden;
   }
-  
+
   .tickets-button::before {
     content: '';
     position: absolute;
@@ -222,12 +222,12 @@
     transform: rotate(30deg);
     animation: shine 3s linear infinite;
   }
-  
+
   @keyframes shimmer {
     0% { background-position: 0% 0; }
     100% { background-position: 200% 0; }
   }
-  
+
   @keyframes shine {
     0% { transform: translateX(-100%) rotate(30deg); }
     100% { transform: translateX(100%) rotate(30deg); }
