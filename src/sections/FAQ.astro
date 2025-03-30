@@ -5,6 +5,8 @@ import WaveSeparator from "@/components/WaveSeparator.astro"
 import { Image } from "astro:assets"
 ---
 
+<WaveSeparator bottomColor="var(--color-primary)" />
+
 <section id="faq">
   <div class="mx-auto max-w-7xl px-6 py-24 pt-12 lg:px-8">
     <div class="lg:grid lg:grid-cols-12 lg:gap-8">
@@ -214,40 +216,6 @@ import { Image } from "astro:assets"
 </section>
 
 <style>
-  body:has(.card[data-color="have"]:hover) {
-    background-color: #66dfff;
-    transition: 0.5s ease-in-out;
-  }
-
-  body:has(.card[data-color="have"]:hover) h2,
-  body:has(.card[data-color="have"]:hover) dt,
-  body:has(.card[data-color="have"]:hover) dd,
-  body:has(.card[data-color="have"]:hover) a {
-    color: #37373d;
-  }
-
-  body:has(.card[data-color="have"]:hover) [data-card-faq] {
-    background-color: var(--color-primary-light);
-  }
-
-  body:has(.card[data-color="have"]:hover) [data-download-document] {
-    background-color: var(--color-theme-cyan);
-  }
-
-  body:has(.card[data-color="have"]:hover) [data-card-hr] {
-    color: var(--color-theme-cyan);
-  }
-
-  body:has(.card[data-color="have"]:hover) [data-wave-saparator-primary] {
-    opacity: 0;
-    transition: 0.5s ease-in-out;
-  }
-
-  body:has(.card[data-color="have"]:hover) [data-wave-saparator-cyan] {
-    opacity: 1;
-    transition: 0.5s ease-in-out;
-  }
-
   .card {
     background-size: cover;
     background-position: center;
