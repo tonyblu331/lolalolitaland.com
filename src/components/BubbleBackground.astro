@@ -1,11 +1,11 @@
 ---
-const bubbles = Array.from({ length: 60 }, (_, i) => ({
+// Reduce bubble count for better performance
+const bubbles = Array.from({ length: 40 }, (_, i) => ({
   id: i + 1,
   size: `${Math.random() * 30 + 10}px`,
-  left: `${Math.random() * 90}%`,
-  delay: `${Math.random() * 10 - 5}s`,
-  duration: `${Math.random() * 15 + 10}s`,
-  opacity: `${Math.random() * 0.4 + 0.3}`,
+  left: `${Math.random() * 95}%`,
+  delay: `${Math.random() * 8}s`, // Positive delays only
+  duration: `${Math.random() * 10 + 8}s`, // Slightly faster animations
 }));
 
 const instanceId = Math.random().toString(36).substring(2, 9);
@@ -14,19 +14,11 @@ const instanceId = Math.random().toString(36).substring(2, 9);
 <style lang="postcss">
   .bubble {
     @apply absolute rounded-full;
-    bottom: 0;
-    background-color: white;
-    will-change: transform;
+    bottom: -10px; /* Start slightly below the container */
+    background-color: rgba(255, 255, 255, 0.6);
+    will-change: transform, opacity;
     animation: bubble linear infinite;
-  }
-
-  @keyframes sideways {
-    0% {
-      margin-left: 0px;
-    }
-    100% {
-      margin-left: 100px;
-    }
+    opacity: 0; /* Start transparent */
   }
 </style>
 
@@ -40,7 +32,6 @@ const instanceId = Math.random().toString(36).substring(2, 9);
         left: ${bubble.left};
         animation-duration: ${bubble.duration};
         animation-delay: ${bubble.delay};
-        opacity: ${bubble.opacity};
       `}
     ></div>
   ))}
@@ -48,7 +39,8 @@ const instanceId = Math.random().toString(36).substring(2, 9);
 
 <script lang="ts">
   if (typeof document !== "undefined") {
-    document.addEventListener("DOMContentLoaded", () => {
+    // Use requestAnimationFrame for better performance
+    const initBubbles = () => {
       const oceanContainers = document.querySelectorAll('.ocean');
       oceanContainers.forEach((ocean) => {
         if (ocean instanceof HTMLElement) {
@@ -64,16 +56,32 @@ const instanceId = Math.random().toString(36).substring(2, 9);
 
             @keyframes bubble-${instanceId} {
               0% {
-                transform: translateY(-10px);
+                transform: translateY(0);
+                opacity: 0;
+              }
+              10% {
+                opacity: 0.7; /* Fade in */
+              }
+              90% {
+                opacity: 0.5;
               }
               100% {
-                transform: translateY(-${oceanHeight}px); /* Move up by the full height of the container */
-                opacity: 0;
+                transform: translateY(-${oceanHeight + 20}px);
+                opacity: 0; /* Fade out at the top */
               }
             }
           `;
         }
       });
-    });
+    };
+
+    // Initialize on load and resize for responsive behavior
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBubbles);
+    } else {
+      initBubbles();
+    }
+    
+    window.addEventListener('resize', initBubbles);
   }
 </script>
