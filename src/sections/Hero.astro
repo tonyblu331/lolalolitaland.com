@@ -26,6 +26,12 @@ import DotBackground from "../components/DotBackground.astro"
       class="image relative"
       title="Fotografía de una joven recostada, que es Lola Lolita, sobre la arena con una cola de sirena azul, frente a una piscina con toboganes rosas en un entorno tropical, con el texto ‘Lola Lolita Land’ en la parte superior."
     >
+      <!-- Date and location temporarily hidden
+      <div class="date-location-container">
+        <div class="date">14-15 DE JUNIO</div>
+        <div class="location">Aquopolis de Madrid</div>
+      </div>
+      -->
       <div class="water"></div>
 
       <svg>
@@ -82,6 +88,39 @@ import DotBackground from "../components/DotBackground.astro"
   </div>
 
   <style>
+    .date-location-container {
+      position: absolute;
+      bottom: 12%;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      text-align: center;
+    }
+
+    .date {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.4rem, 4vw, 3rem);
+      color: #ff0695;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3), 0 0 8px rgba(0, 0, 0, 0.2);
+      letter-spacing: 1px;
+      margin-bottom: 0.1rem;
+      line-height: 1;
+    }
+
+    .location {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.8rem, 2vw, 1.5rem);
+      color: #ff6bc5;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3), 0 0 6px rgba(0, 0, 0, 0.2);
+      letter-spacing: 0.5px;
+    }
+
     .image {
       background-image: url("/images/hero.webp");
       height: 100%;
